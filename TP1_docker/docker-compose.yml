@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+    backend:
+        build:
+            context: ./webserver  # Chemin vers le Dockerfile du backend
+        networks:
+            - app-network
+        depends_on:
+            - database
+
+    database:
+        image: postgres:14.1-alpine  # Image PostgreSQL
+        environment:
+            POSTGRES_DB: db
+            POSTGRES_USER: usr
+            POSTGRES_PASSWORD: pwd
+        networks:
+            - app-network
+
+    httpd:
+        build:
+            context: ./http_server  # Chemin vers le Dockerfile d'Apache HTTP Server
+        ports:
+            - "8080:80"  # Mappage du port 80 du conteneur à 8080 sur l'hôte
+        networks:
+            - app-network
+        depends_on:
+            - backend
+
+networks:
+    app-network:
