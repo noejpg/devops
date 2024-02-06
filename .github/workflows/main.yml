@@ -32,7 +32,6 @@ jobs:
         working-directory: ./webserver2/simple-api-student
         run: mvn clean verify
 
-      # Les étapes en commentaire (`#`) sont actuellement désactivées.
-      # - name: Quality gate with Sonar
-      #   working-directory: ./webserver2/simple-api-student
-      #   run: mvn -B verify sonar:sonar -Dsonar.projectKey=tp-cpe-devops_tp-devops -Dsonar.organization=tp-cpe-devops -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./pom.xml
+      - name: Quality gate with Sonar
+        working-directory: ./webserver2/simple-api-student
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-cpe1_devops -Dsonar.organization=devops-cpe1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./pom.xml
