@@ -191,6 +191,7 @@ networks:
 docker-compose up => Erreur lié au pc de cpe ... pj'ai donc copié mon dossier dans /tmp pour faire le compose, après cela tout s'est bien lancé 
 
 Pour tag et push :
+- docker login -u noejpg1
 - sudo docker tag noe/database noe/database:1.0
 - sudo docker push noe/database:1.0  
 

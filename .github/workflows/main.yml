@@ -1,21 +1,38 @@
+# Le nom du workflow qui décrit son objectif principal, qui est de tester le backend de l'application dans un environnement d'intégration continue (CI) dans le cadre des opérations DevOps.
 name: CI devops test backend
+
+# Cette section spécifie quand le workflow doit être déclenché. Dans ce cas, le workflow est déclenché sur chaque push vers les branches `develop` et `main`.
 on:
   push:
     branches: [develop, main]
+
+# Il s'agit de la liste des jobs (tâches) à exécuter dans le workflow. Dans votre cas, il y a un seul job appelé `test-backend`.
 jobs:
   test-backend:
+    # C'est le nom du job, qui décrit son objectif, qui est de tester l'application Spring backend.
     name: "Test de l'application Spring"
+
+    # Cette section spécifie l'environnement sur lequel le job doit être exécuté. Dans votre cas, le job s'exécute sur une machine virtuelle Ubuntu 22.04.
     runs-on: ubuntu-22.04
+
+    # C'est la liste des étapes à exécuter dans le job. Chaque étape effectue une action spécifique.
     steps:
+      # Cette étape utilise l'action `checkout` pour récupérer le code source du référentiel.
       - uses: actions/checkout@v2.5.0
+
+      # Cette étape configure l'environnement Java en utilisant JDK 17 de Temurin.
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: "17"
           distribution: "temurin"
+
+      # Cette étape compile et teste le projet Maven en exécutant la commande Maven `mvn clean verify` dans le répertoire de travail `./webserver2/simple-api-student`.
       - name: Build and test with Maven
         working-directory: ./webserver2/simple-api-student
         run: mvn clean verify
+
+      # Les étapes en commentaire (`#`) sont actuellement désactivées.
       # - name: Quality gate with Sonar
       #   working-directory: ./webserver2/simple-api-student
       #   run: mvn -B verify sonar:sonar -Dsonar.projectKey=tp-cpe-devops_tp-devops -Dsonar.organization=tp-cpe-devops -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./pom.xml
