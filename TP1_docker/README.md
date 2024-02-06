@@ -37,7 +37,7 @@ ENV POSTGRES_DB=db \\
 - On refait le build :  
 sudo docker build -t noe/database .
 - On re-éxécute le conteneur avec les variables :   
-`sudo docker run -p 5432:5432 -d --name database --network app-network -POSTGRES_PASSWORD=pwd noe/database`
+`sudo docker run -p 5432:5432 -d --name database --network app-network -e POSTGRES_PASSWORD=pwd noe/database`
 
 Init database :
 -
@@ -188,6 +188,10 @@ services:
 networks:
     app-network:
 ```
-docker-compose up => Tout se lancer bien
+docker-compose up => Erreur lié au pc de cpe ... pj'ai donc copié mon dossier dans /tmp pour faire le compose, après cela tout s'est bien lancé 
+
+Pour tag et push :
+- sudo docker tag noe/database noe/database:1.0
+- sudo docker push noe/database:1.0  
 
 
