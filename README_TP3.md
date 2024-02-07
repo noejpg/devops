@@ -188,7 +188,7 @@ Playbook avancé
 
 Création des rôles :
 ```bash
-noe.jobard@tpi08:~/Documents/devops/ansible$ ansible-galaxy init roles/network
+noe.jobard@tpi08:~/Documents/devops/ansible$  
 - Role roles/create_network was created successfully
 noe.jobard@tpi08:~/Documents/devops/ansible$ ansible-galaxy init roles/database
 - Role roles/launch_database was created successfully
@@ -212,3 +212,12 @@ Dans cette tâche, nous lançons le conteneur Docker de l'application avec les p
 Les variables (entre accolades) tels que {{ docker_image }} sont définies dans le fichier vars du rôle, on peut donc garder un code presque similaire entres les tasks des rôles
 
 Cette configuration assure le déploiement et le fonctionnement correct du conteneur Docker de l'application avec les paramètres nécessaires => Le site fonctionne parfaitement bien après cela !
+
+
+Front
+- 
+
+- Ajout au dockercomposer
+- Ajout au workflow pour le push sur docker hub
+- Création d'un nouveau rôle pour le récupérer
+- Changement dans le httpd.conf pour 
