@@ -27,7 +27,12 @@ services:
             POSTGRES_PASSWORD: pwd
         networks:
             - app-network
-
+    front:
+        build:
+            context: ./devops-front-main
+            dockerfile: Dockerfile
+        networks:
+            - app-network
 
 
 networks:

@@ -1,0 +1,5 @@
+---
+# vars file for roles/app
+app_name: backend
+docker_image: noejpg1/devops-backend:1.0.0
+port_expose: 8080:8080 

@@ -1,0 +1,28 @@
+---
+# tasks file for roles/proxy
+
+  - name: Launch {{ app_name }} container
+    docker_container:
+      name: "{{ app_name }}"
+      image: "{{ docker_image }}"
+      state: started
+      networks:
+        - name: '{{ network }}'
+        
+# - name: "Arrêter le container Docker {{app_name}} s'il existe"
+#   command: docker stop httpd
+#   ignore_errors: true
+
+# - name: "Supprimer le container Docker {{app_name}} s'il existe"
+#   command: docker rm httpd
+#   ignore_errors: true
+
+# - name: Tirer l'image Docker depuis Docker Hub
+#   command: docker pull "{{ docker_image }}"
+
+# - name: "Lancer le container Docker {{app_name}}"
+#   command: docker run -d -p {{ port_expose }} --network {{ network }} --name httpd "{{ docker_image }}"
+
+# - name: Afficher le message de confirmation
+#   debug:
+#     msg: "{{app_name}} is running ..."

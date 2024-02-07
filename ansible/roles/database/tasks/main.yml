@@ -1,0 +1,67 @@
+---
+  - name: Launch {{ app_name }} container
+    docker_container:
+      name: "{{ app_name }}"
+      image: "{{ docker_image }}"
+      state: started
+      networks:
+        - name: '{{ network }}'
+      env:
+          POSTGRES_DB: '{{POSTGRES_DB}}'
+          POSTGRES_USER: '{{POSTGRES_USER}}'
+          POSTGRES_PASSWORD: '{{POSTGRES_PASSWORD}}'
+
+
+# tasks file for roles/database
+# - name: "Arrêter le container Docker '{{ app_name }}' s'il existe"
+#   docker_container:
+#     name: "{{ app_name }}"
+#     state: stopped
+#   ignore_errors: true
+
+# - name: "Supprimer le container Docker '{{ app_name }}' s'il existe"
+#   docker_container:
+#     name: "{{ app_name }}"
+#     state: absent
+#   ignore_errors: true
+
+# - name: Tirer l'image Docker depuis Docker Hub
+#   docker_image:
+#     name: "{{ docker_image }}"
+#     source: pull
+
+# - name: "Lancer le container Docker '{{ app_name }}'"
+#   docker_container:
+#     name: "{{ app_name }}"
+#     image: "{{ docker_image }}"
+#     detached: yes
+#     published_ports: "{{ port_expose }}"
+#     env:
+#       - name: POSTGRES_DB
+#         value: db
+#       - name: POSTGRES_USER
+#         value: usr
+#       - name: POSTGRES_PASSWORD
+#         value: pwd
+
+#     networks:
+#       - "{{ network }}"
+
+
+# - name: Afficher le message de confirmation
+#   debug:
+#     msg: "{{ app_name }} is running ..."
+
+
+# - name: Run '{{ app_name }}'
+#   docker_container:
+#     name: '{{ app_name }}'
+#     image: '{{ docker_image }}'
+#     published_ports: '{{ port_expose }}'
+#     env:
+#         POSTGRES_DB: db
+#         POSTGRES_USER: usr
+#         POSTGRES_PASSWORD: pwd
+#     networks:
+#       - name: '{{ network }} '
+
