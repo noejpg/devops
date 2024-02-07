@@ -1,6 +1,6 @@
 ---
 # vars file for roles/front
 app_name: front
-docker_image: noejpg1/devops-front-main:1.0.2
+docker_image: noejpg1/devops-front-main:1.0.3
 port_expose: 81:80
 network: app_network
