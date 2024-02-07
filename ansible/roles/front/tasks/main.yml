@@ -6,6 +6,6 @@
       name: "{{ app_name }}"
       image: "{{ docker_image }}"
       state: started
-      published_ports: '{{ port_expose }}'
+      # published_ports: '{{ port_expose }}'
       networks:
         - name: '{{ network }}'

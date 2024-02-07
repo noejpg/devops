@@ -7,8 +7,9 @@
     - network
     - database
     - app
-    - proxy
     - front
+    - proxy
+
 
   tasks:
    - name: Test connection
