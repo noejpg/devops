@@ -1,0 +1,11 @@
+---
+# tasks file for roles/proxy
+
+  - name: Launch {{ app_name }} container
+    docker_container:
+      name: "{{ app_name }}"
+      image: "{{ docker_image }}"
+      state: started
+      published_ports: '{{ port_expose }}'
+      networks:
+        - name: '{{ network }}'
