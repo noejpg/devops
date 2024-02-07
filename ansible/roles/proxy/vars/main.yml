@@ -1,5 +1,5 @@
 ---
 # vars file for roles/proxy
 app_name: httpd
-docker_image: "noejpg1/devops-{{app_name}}:1.0.1"
+docker_image: "noejpg1/devops-{{app_name}}:1.0.2"
 port_expose: 80:80
