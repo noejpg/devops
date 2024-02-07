@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./http_server
-          tags: ${{secrets.LOGIN}}/devops-httpd:1.0.0
+          tags: ${{secrets.LOGIN}}/devops-httpd:1.0.1
           push: true
       - name: Build image and push front
         uses: docker/build-push-action@v3
