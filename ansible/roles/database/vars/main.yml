@@ -3,4 +3,3 @@
 app_name: database
 docker_image: noejpg1/devops-database:1.0.0
 port_expose: 5432:5432
-network: app_network

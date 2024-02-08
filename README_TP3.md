@@ -222,6 +222,8 @@ Front
 - Création d'un nouveau rôle pour le récupérer
 - Changement dans le httpd.conf pour repasserpar le proxy avec /api
 
+
+
 Check prof
 - 
 
@@ -231,3 +233,5 @@ Reste à utiliser variable d'environnement dans
 - ...
 
 Reste à faire déploiement
+
+créer variable ssh private key 
