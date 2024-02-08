@@ -220,4 +220,14 @@ Front
 - Ajout au dockercomposer
 - Ajout au workflow pour le push sur docker hub
 - Création d'un nouveau rôle pour le récupérer
-- Changement dans le httpd.conf pour 
+- Changement dans le httpd.conf pour repasserpar le proxy avec /api
+
+Check prof
+- 
+
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement

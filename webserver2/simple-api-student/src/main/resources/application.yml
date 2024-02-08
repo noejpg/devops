@@ -8,9 +8,9 @@ spring:
     generate-ddl: false
     open-in-view: true
   datasource:
-    url: jdbc:postgresql://database:5432/db  # Use the name of your PostgreSQL container as the hostname
-    username: usr
-    password: pwd
+    url: jdbc:postgresql://${POSTGRES_HOSTNAME}:5432/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 management:
  server:
