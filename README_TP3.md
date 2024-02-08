@@ -1,6 +1,6 @@
 # Ansible
 
-Ma connewion ssh marche bien :  
+Ma connexion ssh marche bien :  
 `
 noe.jobard@tpi08:~/Documents/devops/ansible$ ssh -i id_rsa centos@noe.jobard.takima.cloud
 Last login: Wed Feb  7 07:52:14 2024 from tpb11.cpe.fr
@@ -55,12 +55,32 @@ all:
   children:
     prod:
       hosts:
-        noe.jobard.takima.cloud:
+        noe.jobard.takima.cloud:Check prof
+- 
+
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement
+
+créer variable ssh private key 
 ```
 
 
 
-Dans cet exemple, nous avons défini un groupe `prod` contenant un seul hôte avec son hostname ou son adresse IP.
+Dans cet exemple, nous avons défini un groupe `prod` contenant un seul hôte avec son hostname ou son adresse IP.Check prof
+- 
+
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement
+
+créer variable ssh private key 
 
 #### Commandes de base
 
@@ -105,11 +125,31 @@ ok: [centos@noe.jobard.takima.cloud]
 PLAY RECAP *********************************************************************************************************************************************************************************
 centos@noe.jobard.takima.cloud : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
+Check prof
+- 
 
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement
+
+créer variable ssh private key 
 Installations
 -
  ```bash
- noe.jobard@tpi08:~/Documents/devops/ansible$ ansible-playbook -i inventories/setup.yml advanced_playbook.yml
+ noe.jobard@tpi08:~/Documents/devops/ansible$ ansible-playbook -i inventories/setup.yml advanced_playbook.ymlCheck prof
+- 
+
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement
+
+créer variable ssh private key 
 
 PLAY [all] *********************************************************************************************************************************************************************************
 
@@ -181,7 +221,17 @@ Playbook avancé
     - Installer Docker CE.
     - Installer Python 3.
     - Installer la bibliothèque Docker Python en utilisant pip3.
-    - S'assurer que le service Docker est en cours d'exécution.
+    - S'assurer que le service Docker est en cours d'exécutiCheck prof
+- 
+
+Reste à utiliser variable d'environnement dans 
+- webserver2/simple-api-student/src/main/resources/application.yml
+- ansible/roles/database/tasks/main.yml
+- ...
+
+Reste à faire déploiement
+
+créer variable ssh private key on.
 
 
 ## Deploy your app
@@ -223,15 +273,11 @@ Front
 - Changement dans le httpd.conf pour repasserpar le proxy avec /api
 
 
-
-Check prof
+Déploiement continu
 - 
 
-Reste à utiliser variable d'environnement dans 
-- webserver2/simple-api-student/src/main/resources/application.yml
-- ansible/roles/database/tasks/main.yml
-- ...
+- J'ai mis ma clé privée dans une variable Github
+- J'ai rajouté la déploiement à mon workflow Gitgub$
 
-Reste à faire déploiement
 
-créer variable ssh private key 
+=> Tout fonctionne bien et le déploiement se fait bien
