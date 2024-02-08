@@ -39,7 +39,7 @@ jobs:
           context: ./devops-front-main
           tags: ${{secrets.LOGIN}}/devops-front-main:1.0.4
           push: true
-      - name: Run playbook
+      - name: Run playbook 
         uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: playbook.yml
